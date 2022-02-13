@@ -12,6 +12,7 @@ RM := rm -rf
 -include Drivers/STM32F0xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Core/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -60,8 +61,8 @@ all: main-build
 main-build: CONTROLE\ RESERVATORIO.elf secondary-outputs
 
 # Tool invocations
-CONTROLE\ RESERVATORIO.elf: $(OBJS) $(USER_OBJS) D:\Programação\Sistemas\ Microprocessados\CONTROLE\ RESERVATORIO\STM32F030C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "CONTROLE RESERVATORIO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"D:\Programação\Sistemas Microprocessados\CONTROLE RESERVATORIO\STM32F030C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CONTROLE RESERVATORIO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+CONTROLE\ RESERVATORIO.elf: $(OBJS) $(USER_OBJS) C:\Users\rodri\Workspace\ControleDeReservatorioDeLiquido\STM32F030C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "CONTROLE RESERVATORIO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\rodri\Workspace\ControleDeReservatorioDeLiquido\STM32F030C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CONTROLE RESERVATORIO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
