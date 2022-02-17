@@ -312,7 +312,7 @@ float getTemperatura(){
 	HAL_ADC_Start(&hadc1);
 	if((HAL_ADC_PollForConversion(&hadc1, 1000000)) == HAL_OK){
 	adcval = HAL_ADC_GetValue(&hadc1);
-	t = ((adcval)*5.1);
+	t = ((adcval)*3.3);
 	temp = (int)t/26.8;
 	}
 	HAL_ADC_Stop(&hadc1);
@@ -341,7 +341,7 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
-  }
+  }.
   /* USER CODE END Error_Handler_Debug */
 }
 
