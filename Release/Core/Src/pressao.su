@@ -1,0 +1,5 @@
+pressao.c:17:7:corrigePressao	24	static
+pressao.c:28:7:getPressao	8	static
+pressao.c:47:7:getAltura	16	static
+pressao.c:59:7:getCapacidade	8	static
+pressao.c:70:7:getDensidade	24	static
